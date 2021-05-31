@@ -13,14 +13,17 @@ writen by pyrogram
 intslling this tool is pretty simple
 just follow the steps
 ```
+apy-get update && apt-get upgrade
+apt-get install git python3
 git clone https://github.com/samyarkd/Telesm
 cd Telesm
 pip install -r requirements.txt
-
 ```
 # useage
 useage is simp just run the main file :)
-
+```
+python3 main.py
+```
 # Video
 youtube video :
 
