@@ -70,6 +70,9 @@ while True:
                 api_id = int(api_id)
                 api_hash = input('Enter api hash: ')
                 app = Client(str(xc), api_id, api_hash)
+                with open(str(xc) + '.txt', 'w') as file:
+                    file.write(f'{api_id}:{api_hash}')
+                    file.close()
                 app.start()
                 app.stop()
                 print(f'{lg}session created successfully !{n}')
@@ -81,7 +84,13 @@ while True:
             try:
                 print(f'{r} enteryour session name you have created in previous step ')
                 sn = input(" >>>>> ")
-                app = Client(session_name= sn)
+                with open(sn +'.txt', 'r') as file:
+                    rl = file.read()
+                    rl = rl.split(':')
+                    api_id = rl[0]
+                    api_hash = rl[1]
+                    
+                app = Client(sn, int(api_id), api_hash)
                 app.start()
                 print(f'{cy} you can easily get chat members name and id in one txt file \n you just need the chat id !! {n}{r}')
                 cid = input('Enter chat id or link(t.me/CHAT): ')
@@ -102,13 +111,17 @@ while True:
                     except Exception as e:
                         reid = cid.replace('https://t.me/', '')
                     
-
+                    try:
+                        app.stop()
+                    except:
+                        pass
                     app.start()
                     main(reid)
                     app.stop()
                     
 
             except Exception as e:
+                print(e)
                 print(f'{cy}There is no session with this name (you can create one in step [1]){n}{ye}')
 
         else: print(f'{ye} enter one of the above options :(')
