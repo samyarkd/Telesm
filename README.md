@@ -25,7 +25,7 @@ useage is simp just run the main file :)
 python3 main.py
 ```
 # Video
-youtube video :
+youtube video : https://www.youtube.com/watch?v=gKWVWvdiRqM
 
 -------------------
 wirten by samyar
